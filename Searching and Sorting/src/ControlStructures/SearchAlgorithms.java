@@ -21,4 +21,41 @@ public class SearchAlgorithms {
 		
 		System.out.println(binSearch(test1, 1));
 	}
+	
+	public static int binSearch(int[] x, int q)
+	{
+		int L = 0;
+		int R = x.length;
+		int m = x.length/2;
+		
+		while(L<=R)
+		{
+			if(q==x[m])
+			{
+				return m;
+			}
+			if(q<x[m])
+			{
+				R=m-1;
+			}
+			if(q>x[m])
+			{
+				L=m+1;
+			}
+			m = ((R-L)/2)+L;
+		}
+		return -1;
+	}
+	
+	public static int linSearch(int[] x, int q)
+	{
+		for(int i = 0; i<x.length; i++)
+		{
+			if(q==x[i])
+			{
+				return i;
+			}
+		}
+		return -1;
+	}
 }
